@@ -52,7 +52,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = "iac"
-    public_key = file("~/.ssh/id_ed25519.pub") # pas dit pad aan als nodig
+    public_key = file(var.ssh_public_key_path)
   }
 
   os_disk {
